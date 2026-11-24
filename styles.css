@@ -1,0 +1,256 @@
+:root {
+  color-scheme: dark light;
+  --bg: #0f1419;
+  --bg-accent: #161d25;
+  --card: #1b242e;
+  --text: #f3f6f8;
+  --muted: #a8b3be;
+  --line: rgba(255, 255, 255, 0.1);
+  --track: #2a3540;
+  --focus: #7dd3c7;
+  --danger: #f0a0a0;
+  --radius: 18px;
+  --pad: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f1ea;
+    --bg-accent: #efeae0;
+    --card: #ffffff;
+    --text: #172027;
+    --muted: #4e5b66;
+    --line: rgba(23, 32, 39, 0.12);
+    --track: #e2e6ea;
+    --focus: #1f7a72;
+    --danger: #9b2c2c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, var(--bg-accent), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  font-size: 1.05rem;
+  padding: calc(20px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
+}
+
+.top, main, footer {
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.summary-stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px var(--pad);
+}
+
+.summary-value {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.summary-label, .asof {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.asof {
+  margin-top: 14px;
+}
+
+.cards {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px);
+  padding: 18px var(--pad) 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-width: 0;
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.pct {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.bar {
+  margin: 14px 0 12px;
+  height: 18px;
+  background: var(--track);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  transition: width 0.6s ease;
+}
+
+.status, .meta, .estimate, .blocker, .next {
+  margin: 0 0 10px;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  font-size: 1.02rem;
+}
+
+.estimate, .meta, .next, .blocker {
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.estimate {
+  font-style: italic;
+}
+
+.meta strong, .next strong, .blocker strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.blocker {
+  color: var(--danger);
+}
+
+.blocker strong {
+  color: var(--danger);
+}
+
+.site {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--focus);
+  font-weight: 650;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.site:hover, .site:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.error {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(155, 44, 44, 0.15);
+  color: var(--danger);
+}
+
+footer {
+  margin-top: 28px;
+}
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px var(--pad);
+}
+
+.install h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.install p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.install p:last-child {
+  margin-bottom: 0;
+}
+
+.fineprint {
+  margin: 14px 4px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+@media (max-width: 420px) {
+  .summary-value, .pct {
+    font-size: 1.85rem;
+  }
+}

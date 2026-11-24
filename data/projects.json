@@ -1,0 +1,98 @@
+{
+  "asOf": "2026-11-24T15:40:00-08:00",
+  "asOfLabel": "Nov 24, 2026, 3:40 PM PT",
+  "note": "Percentages are honest estimates, not measured completion. Update this file and redeploy to refresh the dashboard.",
+  "projects": [
+    {
+      "id": "claimstaker",
+      "name": "ClaimStaker",
+      "percent": 70,
+      "estimate": "Core features live; custom domain and landing page not serving yet.",
+      "status": "The mining-claim app is live. A ClaimStaker-branded landing page for claim-staker.com is in progress. Public DNS for the apex now points at 216.198.79.1, but HTTPS does not present a certificate yet.",
+      "lastUpdated": "2026-11-24",
+      "lastUpdatedLabel": "Nov 24, 2026 (DNS); app deploy Nov 21, 4:00 PM PT",
+      "nextStep": "Finish the branded landing page and get claim-staker.com serving over HTTPS.",
+      "blocker": "claim-staker.com points at a Vercel IP, but TLS has no certificate, so the custom domain is not live.",
+      "url": "https://claimstaker.vercel.app",
+      "color": "#d4a017"
+    },
+    {
+      "id": "morph-tide",
+      "name": "Morph Tide",
+      "percent": 40,
+      "estimate": "Playable 3D build live with guppy start and Valheim look; five-level plan phases A–G not started.",
+      "status": "The playable 3D game is live, including the guppy start and a Valheim look pass. The five-level master plan (phases A–G) is documented and has not been started.",
+      "lastUpdated": "2026-11-24T15:27:00-08:00",
+      "lastUpdatedLabel": "Nov 24, 2026, 3:27 PM PT",
+      "nextStep": "Start five-level plan phases A–G after Chris's OK, staying under the weekly usage stop.",
+      "blocker": "Weekly usage is near the 50% hard stop.",
+      "url": "https://evo-back-to-eden.vercel.app",
+      "color": "#2bb3a8"
+    },
+    {
+      "id": "serviceeval",
+      "name": "ServiceEval",
+      "percent": 72,
+      "estimate": "Site and quote flow are live; feature freeze until real pros sign up, and a contact email is still needed.",
+      "status": "The homeowner quote evaluator is live at serviceeval.com. New features are frozen until real pros sign up. A contact email is still needed from Chris.",
+      "lastUpdated": "2026-11-21T16:05:00-08:00",
+      "lastUpdatedLabel": "Nov 21, 2026, 4:05 PM PT",
+      "nextStep": "Add a contact email, then apply any agreed Claude fix list after Chris says to check Crosswalk.",
+      "blocker": "Feature freeze until real pros sign up; contact email has not been provided.",
+      "url": "https://serviceeval.com",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "apocalypse-tracker",
+      "name": "Apocalypse Tracker",
+      "percent": 70,
+      "estimate": "Core globe and visual/audio features are live; paywall is untested and some planned layers are unfinished.",
+      "status": "The live globe is up. Aurora, solar flares, live hurricanes, thunderstorms, and sound cues shipped earlier; sky, layer, and phone chrome fixes went live today.",
+      "lastUpdated": "2026-11-24T15:36:00-08:00",
+      "lastUpdatedLabel": "Nov 24, 2026, 3:36 PM PT",
+      "nextStep": "Remaining planned work includes an untested paywall and layers such as geomagnetic storms and county borders. The time scrubber stays paused unless Chris reopens it.",
+      "blocker": "Time scrubber is explicitly paused. Paywall checkout was still untested as of Nov 22 and was not rechecked today.",
+      "url": "https://apocalypse-tracker.com",
+      "color": "#e85d4c"
+    },
+    {
+      "id": "gcc-site",
+      "name": "Go Crazy Crochet site",
+      "percent": 80,
+      "estimate": "Site and test-mode shop are live; live payments are pending the webhook secret and Stripe identity verification.",
+      "status": "The marketing site and yarn shop are live. Checkout is in Stripe test mode. Shop prices were matched to current Amazon prices today.",
+      "lastUpdated": "2026-11-24T14:27:00-08:00",
+      "lastUpdatedLabel": "Nov 24, 2026, 2:27 PM PT",
+      "nextStep": "Add the Stripe webhook secret and complete Stripe identity verification so live payments can be turned on.",
+      "blocker": "Live payments are waiting on the webhook secret and Stripe identity verification.",
+      "url": "https://gocrazycrochet.com",
+      "color": "#7c5cbf"
+    },
+    {
+      "id": "gcc-app",
+      "name": "Go Crazy Crochet app",
+      "percent": 85,
+      "estimate": "Pastel PWA is deployed with core follow-along features; the fuller pattern shelf and lesson videos are still pending.",
+      "status": "The pastel redesign is deployed as an installable web app. The production deploy of that restyle passed 18 tests.",
+      "lastUpdated": "2026-11-24T14:24:00-08:00",
+      "lastUpdatedLabel": "Nov 24, 2026, 2:24 PM PT",
+      "nextStep": "Fill out the stitch and pattern shelf, and add real YouTube lesson ids when they are chosen.",
+      "blocker": "",
+      "url": "https://crochet-app-chrisgfree-5870.vercel.app",
+      "color": "#d48aa8"
+    },
+    {
+      "id": "critter-corner",
+      "name": "Critter Corner",
+      "percent": 45,
+      "estimate": "Book interior, cover, and listing copy are drafted; not uploaded to KDP and no account has been created.",
+      "status": "A 30-page coloring book interior, cover, and KDP listing copy are drafted. Nothing has been uploaded or published, and no KDP account has been created. The brand name is not fully settled.",
+      "lastUpdated": "2026-11-21",
+      "lastUpdatedLabel": "Nov 21, 2026",
+      "nextStep": "Confirm the brand name, create the KDP account, and upload the interior and cover.",
+      "blocker": "Not uploaded to KDP, and no account has been created. Earlier working title Critter Crew was taken; Cozy Critter Club was crowded.",
+      "url": "",
+      "color": "#5aa35a"
+    }
+  ]
+}

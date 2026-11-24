@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Project Dashboard</title>
+  <meta name="description" content="Completion dashboard for active projects." />
+  <meta name="theme-color" content="#0f1419" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Projects" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <p class="eyebrow">Active work</p>
+    <h1>Project Dashboard</h1>
+    <div class="summary" id="summary">
+      <div class="summary-stat">
+        <p class="summary-value" id="average">—</p>
+        <p class="summary-label">Overall average</p>
+      </div>
+      <div class="summary-stat">
+        <p class="summary-value" id="count">—</p>
+        <p class="summary-label" id="count-label">Projects</p>
+      </div>
+    </div>
+    <p class="asof" id="asof"></p>
+  </header>
+
+  <main>
+    <p class="error" id="error" hidden></p>
+    <section class="cards" id="cards" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <section class="install" id="install">
+      <h2>Add this to your phone</h2>
+      <p><strong>iPhone:</strong> Open this page in Safari, tap the Share button, then tap Add to Home Screen.</p>
+      <p><strong>Android:</strong> Open this page in Chrome, tap the menu, then tap Add to Home screen or Install app.</p>
+    </section>
+    <p class="fineprint">Percentages are estimates. Edit <code>data/projects.json</code> and redeploy to update them. No accounts or personal data are stored here.</p>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
