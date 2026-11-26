@@ -1,4 +1,4 @@
-const CACHE = "project-dashboard-v1";
+const CACHE = "project-dashboard-v2";
 const PRECACHE = [
   "/",
   "/index.html",
@@ -26,38 +26,31 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+async function networkFirst(request) {
+  try {
+    const res = await fetch(request);
+    if (res && res.ok) {
+      const cache = await caches.open(CACHE);
+      cache.put(request, res.clone());
+    }
+    return res;
+  } catch (err) {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+    if (request.mode === "navigate") {
+      const home = (await caches.match("/")) || (await caches.match("/index.html"));
+      if (home) return home;
+    }
+    throw err;
+  }
+}
+
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
-  const isData = url.pathname.endsWith("/data/projects.json");
-  if (isData) {
-    event.respondWith(
-      fetch(req)
-        .then((res) => {
-          if (res && res.ok) {
-            const copy = res.clone();
-            caches.open(CACHE).then((cache) => cache.put(req, copy));
-          }
-          return res;
-        })
-        .catch(() => caches.match(req))
-    );
-    return;
-  }
-
-  event.respondWith(
-    caches.match(req).then((cached) => {
-      if (cached) return cached;
-      return fetch(req).then((res) => {
-        if (res && res.ok && res.type === "basic") {
-          const copy = res.clone();
-          caches.open(CACHE).then((cache) => cache.put(req, copy));
-        }
-        return res;
-      });
-    })
-  );
+  // Network-first for everything so a new deploy always shows up; cache is only an offline fallback.
+  event.respondWith(networkFirst(req));
 });
